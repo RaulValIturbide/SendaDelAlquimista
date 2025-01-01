@@ -13,12 +13,15 @@ public class Encuentro {
     private Enemigo enemigo;
     private Jugador jugador;
     private boolean finEncuentro;
-
-    public Encuentro(Enemigo enemigo, Jugador jugador, boolean finEncuentro) {
-        this.enemigo = enemigo;
-        this.jugador = jugador;
-        this.finEncuentro = finEncuentro;
+    
+    public void ataque(Enemigo enemigo, Jugador jugador){
+        enemigo.setVida(enemigo.getVida()-jugador.getAtaque());
     }
+
+  
+    
+    
+
 
 }
 
