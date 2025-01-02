@@ -1,5 +1,6 @@
 
 package sendadelalquimista;
+import java.util.Random;
 
 /**
  * El objetivo del juego es crear un mapa general donde el jugador vaya
@@ -15,15 +16,29 @@ public class SendaDelAlquimista {
      */
     public static void main(String[] args) {
         Encuentro encuentro = new Encuentro();
-        Jugador alquimista = new Jugador(100, 10, 100, 100, "Cazador", true);
+        Arma[] aArma = new Arma[3];
+        arma(aArma);
+        Jugador alquimista = new Jugador(100,aArma[0] , 100, 100, "Cazador", true);
         Enemigo[] aEnemigo = new Enemigo[5];
         enemigo(aEnemigo);
         
         
+        encuentro.ronda (aEnemigo[0],alquimista);
         
-     
+        
+
+                
+        
+        
+  
 
     }
+    
+    
+    
+    
+    
+    
 
     /**
      * Un metodo que genera los enemigos que apareceran en el juego creado aqui
@@ -39,6 +54,15 @@ public class SendaDelAlquimista {
         aEnemigo[3] = new Enemigo(100, 10, 10, 10, "Explorador", true);
         aEnemigo[4] = new Enemigo(100, 10, 10, 10, "Esqueleto", true);
         return aEnemigo;
+    }
+    
+    
+    private static Arma[] arma(Arma[] aArma) {
+        Random random = new Random();
+        aArma[0] = new Arma("Espada", random.nextInt(12,22) );
+        aArma[1] = new Arma("Porra", random.nextInt(2,12));
+        aArma[2] = new Arma("Lanza_Pistola", random.nextInt(22,32));
+        return aArma;
     }
 
 }
