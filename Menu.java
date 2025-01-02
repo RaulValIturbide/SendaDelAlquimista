@@ -3,11 +3,53 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package sendadelalquimista;
-
+import java.util.Scanner;
 /**
  *
  * @author baske
  */
 public class Menu {
+    static Scanner teclado = new Scanner(System.in);
+    
+    
+    /**
+     * Metodo para dar comienzo a la ronda estableciendo atacantes
+     * @param enemigo el objeto enemigo al que se está enfrentando el jugador
+     * @param jugador el propio jugador
+     */
+    public static void comienzoDeRonda(Enemigo enemigo, Jugador jugador){
+        System.out.println("Comienza la ronda, " + jugador.getNombre() + " se enfrenta a " + enemigo.getNombre() );
+        System.out.println(jugador.getNombre() + " ataca primero");
+    }
+    
+    /**
+     * Un simple void que le pide al jugador elegir 1 o 2
+     */
+    public static void eleccionSkill(){
+        System.out.format("""
+                          1-Atacar
+                          2-Habilidades
+                          """);
+    
+    }
+    
+    
+    
+    /**
+     *
+     * @return  Metodo que devuelve el int que de el usuario
+     */
+    public static int eleccionJugador() {
+        int variable;
+        do {
+            variable = teclado.nextInt();
+            if (variable < 1 || variable > 2) {
+                System.out.println("Elige uno de los numeros posibles");
+            }
+        } while (variable < 1 || variable > 2);
+
+        return variable;
+
+    }
     
 }
