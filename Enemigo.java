@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package sendadelalquimista;
 
 /**
@@ -9,40 +5,75 @@ package sendadelalquimista;
  * @author baske
  */
 public class Enemigo {
+    //Atributos de un enemigo
     private int vida;
+    private int ataque;
     private int mana;
+    private int oro;
     private String nombre;
     private boolean vivo;
     
-    public Enemigo(int vida, int mana , String nombre, boolean vivo){
-        this.vida =vida;
+    private static int contadorEnemigo;
+
+    public Enemigo(int vida, int ataque, int mana, int oro, String nombre, boolean vivo) {
+        this.vida = vida;
+        this.ataque = ataque;
         this.mana = mana;
+        this.oro = oro;
         this.nombre = nombre;
         this.vivo = vivo;
+        contadorEnemigo++;
     }
-    
-    public int getVida(){
+
+    public int getVida() {
         return vida;
     }
-    public void setVida(int vida){
+
+    public void setVida(int vida) {
         this.vida = vida;
     }
-    public int getMana(){
+
+    public int getAtaque() {
+        return ataque;
+    }
+
+    public void setAtaque(int ataque) {
+        this.ataque = ataque;
+    }
+
+    public int getMana() {
         return mana;
     }
-    public void setMana(int mana){
+
+    public void setMana(int mana) {
         this.mana = mana;
     }
-    public String getNombre(){
+
+    public int getOro() {
+        return oro;
+    }
+
+    public void setOro(int oro) {
+        this.oro = oro;
+    }
+
+    public String getNombre() {
         return nombre;
     }
-    public void setNombre(String nombre){
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public boolean getVivo(){
+
+    public boolean getVivo() {
         return vivo;
     }
-    public void setVivo(boolean vivo){
+
+    public void setVivo(boolean vivo) {
         this.vivo = vivo;
+    }
+
+    public void muerte() {
+        this.vivo = false;
     }
 }
