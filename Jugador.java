@@ -14,15 +14,16 @@ package sendadelalquimista;
 public class Jugador {
 
     private int vida;
+    private Arma arma;
     private int ataque;
     private int mana;
     private int oro;
     private String nombre;
     private boolean vivo;
 
-    public Jugador(int vida, int ataque, int mana, int oro, String nombre, boolean vivo) {
+    public Jugador(int vida, Arma arma, int mana, int oro, String nombre, boolean vivo) {
         this.vida = vida;
-        this.ataque = ataque;
+        this.arma = arma;
         this.mana = mana;
         this.oro = oro;
         this.nombre = nombre;
@@ -37,13 +38,6 @@ public class Jugador {
         return vida;
     }
 
-    public void setAtaque(int ataque) {
-        this.ataque = ataque;
-    }
-
-    public int getAtaque() {
-        return ataque;
-    }
 
     public void setMana(int mana) {
         this.mana = mana;
@@ -82,5 +76,14 @@ public class Jugador {
         this.vivo = false;
     }
 
-}
+    public void setArma(Arma arma) {
+        this.arma = arma;
+    }
 
+    public Arma getArma() {
+        return arma;
+    }
+
+  
+
+}
