@@ -7,7 +7,7 @@ package sendadelalquimista;
 /**
  * Crearemos distintas clases con distintos puntos de vida y ataque de base que
  * puedan portar diferentes tipos de items excluyentes entre si ej:un espadon
- * será propio de una clase y solo de esa clase excluyendo a las demás
+ * serĂĄ propio de una clase y solo de esa clase excluyendo a las demĂĄs
  *
  * @author baske
  */
@@ -15,15 +15,16 @@ public class Jugador {
 
     private int vida;
     private Arma arma;
-    private int ataque;
+    private Alquimia[] aAlquimia;
     private int mana;
     private int oro;
     private String nombre;
     private boolean vivo;
 
-    public Jugador(int vida, Arma arma, int mana, int oro, String nombre, boolean vivo) {
+    public Jugador(int vida, Arma arma, Alquimia[] aAlquimia, int mana, int oro, String nombre, boolean vivo) {
         this.vida = vida;
         this.arma = arma;
+        this.aAlquimia = aAlquimia;
         this.mana = mana;
         this.oro = oro;
         this.nombre = nombre;
@@ -83,6 +84,21 @@ public class Jugador {
     public Arma getArma() {
         return arma;
     }
+
+    public Alquimia[] getaAlquimia() {
+        return aAlquimia;
+    }
+
+
+    public boolean isVivo() {
+        return vivo;
+    }
+
+    public void setaAlquimia(Alquimia[] aAlquimia) {
+        this.aAlquimia = aAlquimia;
+    }
+
+   
 
   
 
