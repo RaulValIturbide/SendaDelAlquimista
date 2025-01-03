@@ -1,5 +1,5 @@
-
 package sendadelalquimista;
+
 import java.util.Random;
 
 /**
@@ -17,28 +17,16 @@ public class SendaDelAlquimista {
     public static void main(String[] args) {
         Encuentro encuentro = new Encuentro();
         Arma[] aArma = new Arma[3];
-        arma(aArma);
-        Jugador alquimista = new Jugador(100,aArma[0] , 100, 100, "Cazador", true);
         Enemigo[] aEnemigo = new Enemigo[5];
+        Alquimia[] aAlquimia = new Alquimia[2];
+        arma(aArma);
         enemigo(aEnemigo);
-        
-        
-        encuentro.ronda (aEnemigo[0],alquimista);
-        
-        
+        alquimia(aAlquimia);
+        Jugador alquimista = new Jugador(100, aArma[0], aAlquimia, 100, 100, "Cazador", true);
 
-                
-        
-        
-  
+        encuentro.ronda(aEnemigo[0], alquimista,aAlquimia);
 
     }
-    
-    
-    
-    
-    
-    
 
     /**
      * Un metodo que genera los enemigos que apareceran en el juego creado aqui
@@ -55,14 +43,33 @@ public class SendaDelAlquimista {
         aEnemigo[4] = new Enemigo(100, 10, 10, 10, "Esqueleto", true);
         return aEnemigo;
     }
-    
-    
+
+    /**
+     * Metodo para inicializar todas las Armas del juego
+     *
+     * @param aArma
+     * @return
+     */
     private static Arma[] arma(Arma[] aArma) {
         Random random = new Random();
-        aArma[0] = new Arma("Espada", random.nextInt(12,22) );
-        aArma[1] = new Arma("Porra", random.nextInt(2,12));
-        aArma[2] = new Arma("Lanza_Pistola", random.nextInt(22,32));
+        aArma[0] = new Arma("Espada", 10);
+        aArma[1] = new Arma("Porra", 20);
+        aArma[2] = new Arma("Lanza_Pistola", 30);
         return aArma;
     }
+     /**
+     * Metodo para crear las pociones de alquimia
+     *
+     * @param aAlquimia
+     * @return
+     */
+    public static Alquimia[] alquimia(Alquimia[] aAlquimia) {
+        aAlquimia[0] = new Alquimia("Verisaterum", 10,true,false);
+        aAlquimia[1] = new Alquimia("Forte", 24,false,false);
+        return aAlquimia;
+    }
+ 
+
+
 
 }
