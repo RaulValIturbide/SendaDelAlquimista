@@ -28,7 +28,7 @@ public class Menu {
     public static void eleccionSkill(){
         System.out.format("""
                           1-Atacar
-                          2-Habilidades
+                          2-Alquimia
                           """);
     
     }
@@ -39,14 +39,14 @@ public class Menu {
      *
      * @return  Metodo que devuelve el int que de el usuario
      */
-    public static int eleccionJugador() {
+    public static int eleccionJugador(int menor, int mayor) {
         int variable;
         do {
             variable = teclado.nextInt();
-            if (variable < 1 || variable > 2) {
+            if (variable < menor || variable > mayor) {
                 System.out.println("Elige uno de los numeros posibles");
             }
-        } while (variable < 1 || variable > 2);
+        } while (variable < menor || variable > mayor);
 
         return variable;
 
