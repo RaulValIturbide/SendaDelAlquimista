@@ -48,5 +48,19 @@ public class Alquimia {
     public boolean usarPocion() {
         return this.usado = true;
     }
+    public static int pocionesDisponibles(Alquimia[] aAlquimia) {
+        int contador = 1;
+        for (int i = 0; i < aAlquimia.length; i++) {
+            if (aAlquimia[i].getEnPosesion()) {
+                System.out.println(contador + "-" + aAlquimia[i].getNombre());
+                
+            }else{System.out.println(contador + "-?????????");}
+            contador++;
+
+        }
+        return contador;
+    }
+
+
 
 }

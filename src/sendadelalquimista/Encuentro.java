@@ -36,9 +36,9 @@ public class Encuentro {
                 }
                 break;
             case 2:
-                ataque = enemigo.getAtaque();
+                ataque = enemigo.getArma().getAtaque();
                 jugador.setVida(jugador.getVida() - ataque);
-                if (jugador.getVida()<=0){
+                if (jugador.getVida() <= 0) {
                     jugador.muerte();
                 }
                 break;
@@ -52,8 +52,12 @@ public class Encuentro {
      * @param usuario el numero que el jugador elegirá
      * @param jugador el propio jugador
      * @param enemigo el enemigo al que se esta enfrentando
+     * @param aAlquimia el array de alquimia donde se encuentran todos los
+     * objetos
+     * @param accion La capacidad del jugador/enemigo para seguir realizando
+     * acciones en su turno(true = puede, false = cambio de turno)
      */
-    public void ejecucionJugador(int usuario, Jugador jugador, Enemigo enemigo, Alquimia[] alquimia, boolean accion) {
+    public void ejecucionJugador(int usuario, Jugador jugador, Enemigo enemigo, Alquimia[] aAlquimia, boolean accion) {
         switch (usuario) {
 
             case 1:
@@ -64,15 +68,19 @@ public class Encuentro {
                 accion = jugador.terminarAccion();
                 break;
             case 2:
-                System.out.println("Que pocion deseas crear?:\n1-Verisaterum\n2-Forte");
-                int eleccion = Menu.eleccionJugador(1, 2);
+                System.out.println("Que pocion deseas crear?:");
+                int maxPocion = Alquimia.pocionesDisponibles(aAlquimia);
+                
+                
+                
+                int eleccion = Menu.eleccionJugador(1, maxPocion-1);
 
-                if (alquimia[eleccion - 1].getUsado()) {
+                if (aAlquimia[eleccion - 1].getUsado()) {
                     System.out.println("Ya has usado esta poción");
                 } else {
-                    System.out.println("Pocion " + alquimia[eleccion - 1].getNombre() + " se está usando");
-                    jugador.getArma().setAtaque(jugador.getArma().getAtaque() + alquimia[eleccion - 1].getAddAtaque());
-                    alquimia[eleccion - 1].usarPocion();
+                    System.out.println("Pocion " + aAlquimia[eleccion - 1].getNombre() + " se está usando");
+                    jugador.getArma().setAtaque(jugador.getArma().getAtaque() + aAlquimia[eleccion - 1].getAddAtaque());
+                    aAlquimia[eleccion - 1].usarPocion();
                     System.out.println("El ataque del arma es ahora de: " + jugador.getArma().getAtaque());
                 }
 
@@ -82,7 +90,7 @@ public class Encuentro {
     }
 
     public void ejecucionIa(Jugador jugador, Enemigo enemigo) {
-        System.out.println("El ataque de " + enemigo.getNombre() + " es de:" + enemigo.getAtaque());
+        System.out.println("El ataque de " + enemigo.getNombre() + " es de:" + enemigo.getArma().getAtaque());
         System.out.println("La vida de " + jugador.getNombre() + " es de " + jugador.getVida());
         ataque(enemigo, jugador, 2);
         System.out.println("El ataque de " + enemigo.getNombre() + " deja a " + jugador.getNombre() + " a " + jugador.getVida());
@@ -116,6 +124,6 @@ public class Encuentro {
 
     }
 
+
+
 }
-
-

@@ -18,10 +18,10 @@ public class SendaDelAlquimista {
         Encuentro encuentro = new Encuentro();
         Arma[] aArma = new Arma[3];
         Enemigo[] aEnemigo = new Enemigo[5];
-        Alquimia[] aAlquimia = new Alquimia[2];
-        arma(aArma);
-        enemigo(aEnemigo);
-        alquimia(aAlquimia);
+        Alquimia[] aAlquimia = new Alquimia[3];
+        inicioArma(aArma);
+        inicioAlquimia(aAlquimia);
+        inicioEnemigo(aEnemigo,aArma[1],aAlquimia);
         Jugador alquimista = new Jugador(100, aArma[0], aAlquimia, 100, 100, "Cazador", true,true);
 
         encuentro.ronda(aEnemigo[0], alquimista, aAlquimia);
@@ -35,12 +35,12 @@ public class SendaDelAlquimista {
      * @param aEnemigo El objeto que se desea crear, en este caso los enemigos.
      * @return Devuelve el array con los objetos enemigo ya creados.
      */
-    private static Enemigo[] enemigo(Enemigo[] aEnemigo) {
-        aEnemigo[0] = new Enemigo(100, 10, 10, 10, "Goblin", true,true);
-        aEnemigo[1] = new Enemigo(100, 10, 10, 10, "Ogro", true,true);
-        aEnemigo[2] = new Enemigo(100, 10, 10, 10, "Orco", true,true);
-        aEnemigo[3] = new Enemigo(100, 10, 10, 10, "Explorador", true,true);
-        aEnemigo[4] = new Enemigo(100, 10, 10, 10, "Esqueleto", true,true);
+    private static Enemigo[] inicioEnemigo(Enemigo[] aEnemigo, Arma arma, Alquimia[] alquimia) {
+        aEnemigo[0] = new Enemigo(100,arma, alquimia , 10, 10, "Goblin", true,true);
+        aEnemigo[1] = new Enemigo(100, arma,alquimia, 10, 10, "Ogro", true,true);
+        aEnemigo[2] = new Enemigo(100, arma,alquimia, 10, 10, "Orco", true,true);
+        aEnemigo[3] = new Enemigo(100, arma,alquimia, 10, 10, "Explorador", true,true);
+        aEnemigo[4] = new Enemigo(100, arma,alquimia, 10, 10, "Esqueleto", true,true);
         return aEnemigo;
     }
 
@@ -50,7 +50,7 @@ public class SendaDelAlquimista {
      * @param aArma
      * @return
      */
-    private static Arma[] arma(Arma[] aArma) {
+    private static Arma[] inicioArma(Arma[] aArma) {
         Random random = new Random();
         aArma[0] = new Arma("Espada", 50);
         aArma[1] = new Arma("Porra", 20);
@@ -63,9 +63,10 @@ public class SendaDelAlquimista {
      * @param aAlquimia
      * @return
      */
-    public static Alquimia[] alquimia(Alquimia[] aAlquimia) {
+    public static Alquimia[] inicioAlquimia(Alquimia[] aAlquimia) {
         aAlquimia[0] = new Alquimia("Verisaterum", 10,true,false);
         aAlquimia[1] = new Alquimia("Forte", 24,false,false);
+        aAlquimia[2] = new Alquimia("Flamma Maledicta",30,false,false);
         return aAlquimia;
     }
  

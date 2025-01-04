@@ -4,7 +4,7 @@ package sendadelalquimista;
 public class Notas {
     
     /*Problemas a arreglar
-    
+    -Las pociones se pueden usar aunque no estén en posesión del jugador/enemigo
     
     */
     
@@ -21,6 +21,9 @@ public class Notas {
     -Que los da?os tengan un componente aleatorio tanto de enemigos como del jugador
     -Crear resistencias
     -A?adir armas a la ia y pociones para que pueda usarlas
+    -Las pociones pueden usarse aunque no se tengan en posesion, debo hacer algo para que salgan diferentes mensajes dependiendo de si
+     no la tengo o si ya la he usado 
+    - 
     
     
     
@@ -41,7 +44,11 @@ public class Notas {
     -He creado un metodo para hacer que la "IA" ataque al jugador durante la ronda.
     -Creo que debería generar algún tipo de boolean que "gaste" una acción para asi no poder usar pociones infinitas o cambiar de armas infinitamente
     
-    
+    04/01/2025
+    -He creado el atributo "arma" para los enemigos y ahora deben usar el da?o de sus armas para atacar, tambien poseen ahora las pociones de alquimia pero 
+    no está implementado su uso todavia
+    -He conseguido crear una lista de las pociones, por ahora la idea es que posees un conocimiento del numero de pociones existentes pero no conoces su nombre 
+     por lo que hay un hueco con "???????" cuando no tienes la pocion en posesion
     
     
     

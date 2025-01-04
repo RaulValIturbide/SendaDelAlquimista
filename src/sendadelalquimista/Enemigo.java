@@ -5,20 +5,24 @@ package sendadelalquimista;
  * @author baske
  */
 public class Enemigo {
+
     //Atributos de un enemigo
     private int vida;
-    private int ataque;
+    private Arma arma;
+    private Alquimia[] aAlquimia;
     private int mana;
     private int oro;
     private String nombre;
+
     private boolean vivo;
     private boolean accion;
-    
+
     private static int contadorEnemigo;
 
-    public Enemigo(int vida, int ataque, int mana, int oro, String nombre, boolean vivo, boolean accion) {
+    public Enemigo(int vida, Arma arma, Alquimia[] aAlquimia, int mana, int oro, String nombre, boolean vivo, boolean accion) {
         this.vida = vida;
-        this.ataque = ataque;
+        this.arma = arma;
+        this.aAlquimia = aAlquimia;
         this.mana = mana;
         this.oro = oro;
         this.nombre = nombre;
@@ -35,12 +39,20 @@ public class Enemigo {
         this.vida = vida;
     }
 
-    public int getAtaque() {
-        return ataque;
+    public Arma getArma() {
+        return arma;
     }
 
-    public void setAtaque(int ataque) {
-        this.ataque = ataque;
+    public Alquimia[] getaAlquimia() {
+        return aAlquimia;
+    }
+
+    public void setArma(Arma arma) {
+        this.arma = arma;
+    }
+
+    public void setaAlquimia(Alquimia[] aAlquimia) {
+        this.aAlquimia = aAlquimia;
     }
 
     public int getMana() {
@@ -82,11 +94,13 @@ public class Enemigo {
     public boolean getAccion() {
         return accion;
     }
-    public void setAccion(boolean accion){
+
+    public void setAccion(boolean accion) {
         this.accion = accion;
     }
-     public void regenerarAccionEnemigo(){
+
+    public void regenerarAccionEnemigo() {
         accion = true;
     }
-    
+
 }
