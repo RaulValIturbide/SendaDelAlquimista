@@ -12,17 +12,17 @@ public class Jugador {
     private int vida;
     private Arma arma;
     private Alquimia[] aAlquimia;
-    private int mana;
+    private int velocidad;
     private int oro;
     private String nombre;
     private boolean vivo;
     private boolean accion;//Será true cuando el jugador pueda seguir realizando acciones y false cuando pase a ser el turno enemigo
 
-    public Jugador(int vida, Arma arma, Alquimia[] aAlquimia, int mana, int oro, String nombre, boolean vivo, boolean accion) {
+    public Jugador(int vida, Arma arma, Alquimia[] aAlquimia, int velocidad, int oro, String nombre, boolean vivo, boolean accion) {
         this.vida = vida;
         this.arma = arma;
         this.aAlquimia = aAlquimia;
-        this.mana = mana;
+        this.velocidad = velocidad;
         this.oro = oro;
         this.nombre = nombre;
         this.vivo = vivo;
@@ -37,12 +37,12 @@ public class Jugador {
         return vida;
     }
 
-    public void setMana(int mana) {
-        this.mana = mana;
+    public int getVelocidad() {
+        return velocidad;
     }
 
-    public int getMana() {
-        return mana;
+    public void setMana(int velocidad) {
+        this.velocidad = velocidad;
     }
 
     public void setOro(int oro) {

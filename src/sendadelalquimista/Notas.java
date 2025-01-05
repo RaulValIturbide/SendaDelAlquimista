@@ -10,19 +10,22 @@ public class Notas {
         -No puedo agregar el objeto alquimia en la ronda 
         -Las pociones se pueden usar aunque no estén en posesión del jugador/enemigo
      */
+    
  /*To Do List 
     -Crear el comportamiento del enemigo en la ronda
     -Que los da?os tengan un componente aleatorio tanto de enemigos como del jugador
     -Crear resistencias
+    - Sistema de velocidad para elegir quien empieza atacando
+    -Necesito darle a la IA acceso a la alquimia en el metodo "ejecucionIA" para crear un switch donde la IA aleatoriamente decida si usar alquimia o no en sus armas
+        para luego implementarlo en la ronda
+     */
+    
+    /*Hecho
     -A?adir armas a la ia y pociones para que pueda usarlas
     -Las pociones pueden usarse aunque no se tengan en posesion, debo hacer algo para que salgan diferentes mensajes dependiendo de si
-     no la tengo o si ya la he usado 
-    - Sistema de velocidad para elegir quien empieza atacando
+        no la tengo o si ya la he usado  
     
-    
-    
-    
-     */
+    */
  /*
     02/01/2025
     -Arreglar el problema en el que un arma tiene siempre un da?o determinado

@@ -22,13 +22,13 @@ public class SendaDelAlquimista {
         inicioArma(aArma);
         inicioAlquimia(aAlquimia);
         inicioEnemigo(aEnemigo,aArma[1],aAlquimia);
-        Jugador alquimista = new Jugador(100, aArma[0], aAlquimia, 100, 100, "Cazador", true,true);
+        Jugador alquimista = new Jugador(100, aArma[0], aAlquimia, 10, 100, "Cazador", true,true);
         
         
         
         
         //Comienzo del "Juego"
-        encuentro.ronda(aEnemigo[0], alquimista, aAlquimia);
+        encuentro.ronda(aEnemigo[4], alquimista, aAlquimia);
 
     }
 
@@ -40,10 +40,10 @@ public class SendaDelAlquimista {
      * @return Devuelve el array con los objetos enemigo ya creados.
      */
     private static Enemigo[] inicioEnemigo(Enemigo[] aEnemigo, Arma arma, Alquimia[] alquimia) {
-        aEnemigo[0] = new Enemigo(100,arma, alquimia , 10, 10, "Goblin", true,true);
-        aEnemigo[1] = new Enemigo(100, arma,alquimia, 10, 10, "Ogro", true,true);
-        aEnemigo[2] = new Enemigo(100, arma,alquimia, 10, 10, "Orco", true,true);
-        aEnemigo[3] = new Enemigo(100, arma,alquimia, 10, 10, "Explorador", true,true);
+        aEnemigo[0] = new Enemigo(100,arma, alquimia , 20, 10, "Goblin", true,true);
+        aEnemigo[1] = new Enemigo(100, arma,alquimia, 20, 10, "Ogro", true,true);
+        aEnemigo[2] = new Enemigo(100, arma,alquimia, 20, 10, "Orco", true,true);
+        aEnemigo[3] = new Enemigo(100, arma,alquimia, 20, 10, "Explorador", true,true);
         aEnemigo[4] = new Enemigo(100, arma,alquimia, 10, 10, "Esqueleto", true,true);
         return aEnemigo;
     }

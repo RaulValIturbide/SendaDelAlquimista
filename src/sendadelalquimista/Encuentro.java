@@ -108,18 +108,29 @@ public class Encuentro {
     public void ronda(Enemigo enemigo, Jugador jugador, Alquimia[] alquimia) {
         Menu.comienzoDeRonda(enemigo, jugador);
         do {
-            do {
+            if (jugador.getVelocidad() > enemigo.getVelocidad()) {
+                do {
+                    Menu.eleccionSkill();
+                    ejecucionJugador(Menu.eleccionJugador(1, 2), jugador, enemigo, alquimia, jugador.getAccion());
+                    Menu.lineaEnBlanco();
+                    Menu.continuarCombate();
+                } while (jugador.getAccion() == true);
+                jugador.regenerarAccionJugador();
+                Menu.lineaEnBlanco();
+                if (enemigo.getVivo()) {
+                    ejecucionIa(jugador, enemigo);
+                    enemigo.regenerarAccionEnemigo();
+                }
+            } else {
+                
+                ejecucionIa(jugador, enemigo);
+                enemigo.regenerarAccionEnemigo();
+                Menu.lineaEnBlanco();
+                Menu.continuarCombate();
                 Menu.eleccionSkill();
 
                 ejecucionJugador(Menu.eleccionJugador(1, 2), jugador, enemigo, alquimia, jugador.getAccion());
-                Menu.lineaEnBlanco();
-                Menu.continuarCombate();
-            } while (jugador.getAccion() == true);
-            jugador.regenerarAccionJugador();
-            Menu.lineaEnBlanco();
-            if (enemigo.getVivo()) {
-                ejecucionIa(jugador, enemigo);
-                enemigo.regenerarAccionEnemigo();
+
             }
         } while (enemigo.getVivo() && jugador.getVivo());
 

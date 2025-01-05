@@ -10,7 +10,7 @@ public class Enemigo {
     private int vida;
     private Arma arma;
     private Alquimia[] aAlquimia;
-    private int mana;
+    private int velocidad;
     private int oro;
     private String nombre;
 
@@ -19,11 +19,11 @@ public class Enemigo {
 
     private static int contadorEnemigo;
 
-    public Enemigo(int vida, Arma arma, Alquimia[] aAlquimia, int mana, int oro, String nombre, boolean vivo, boolean accion) {
+    public Enemigo(int vida, Arma arma, Alquimia[] aAlquimia, int velocidad, int oro, String nombre, boolean vivo, boolean accion) {
         this.vida = vida;
         this.arma = arma;
         this.aAlquimia = aAlquimia;
-        this.mana = mana;
+        this.velocidad = velocidad;
         this.oro = oro;
         this.nombre = nombre;
         this.vivo = vivo;
@@ -55,12 +55,12 @@ public class Enemigo {
         this.aAlquimia = aAlquimia;
     }
 
-    public int getMana() {
-        return mana;
+    public int getVelocidad() {
+        return velocidad;
     }
 
-    public void setMana(int mana) {
-        this.mana = mana;
+    public void setMana(int velocidad) {
+        this.velocidad = velocidad;
     }
 
     public int getOro() {
