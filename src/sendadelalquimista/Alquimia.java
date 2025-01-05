@@ -54,7 +54,7 @@ public class Alquimia {
             if (aAlquimia[i].getEnPosesion()) {
                 System.out.println(contador + "-" + aAlquimia[i].getNombre());
                 
-            }else{System.out.println(contador + "-?????????");}
+            }else{System.out.println(contador + "-??? ?????");}
             contador++;
 
         }

@@ -23,7 +23,11 @@ public class SendaDelAlquimista {
         inicioAlquimia(aAlquimia);
         inicioEnemigo(aEnemigo,aArma[1],aAlquimia);
         Jugador alquimista = new Jugador(100, aArma[0], aAlquimia, 100, 100, "Cazador", true,true);
-
+        
+        
+        
+        
+        //Comienzo del "Juego"
         encuentro.ronda(aEnemigo[0], alquimista, aAlquimia);
 
     }
@@ -66,7 +70,7 @@ public class SendaDelAlquimista {
     public static Alquimia[] inicioAlquimia(Alquimia[] aAlquimia) {
         aAlquimia[0] = new Alquimia("Verisaterum", 10,true,false);
         aAlquimia[1] = new Alquimia("Forte", 24,false,false);
-        aAlquimia[2] = new Alquimia("Flamma Maledicta",30,false,false);
+        aAlquimia[2] = new Alquimia("Flamma Maledicta",30,true,false);
         return aAlquimia;
     }
  

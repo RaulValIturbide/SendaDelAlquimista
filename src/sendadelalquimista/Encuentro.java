@@ -68,19 +68,20 @@ public class Encuentro {
                 accion = jugador.terminarAccion();
                 break;
             case 2:
-                System.out.println("Que pocion deseas crear?:");
-                int maxPocion = Alquimia.pocionesDisponibles(aAlquimia);
+                System.out.println("Que alquímia deseas crear?:");
+                int maxPocion = Alquimia.pocionesDisponibles(aAlquimia);//Listado de alquimias disponibles y ocultas
                 
                 
                 
-                int eleccion = Menu.eleccionJugador(1, maxPocion-1);
-
-                if (aAlquimia[eleccion - 1].getUsado()) {
-                    System.out.println("Ya has usado esta poción");
+                int eleccion = Menu.eleccionJugador(1, maxPocion)-1;
+                if (!aAlquimia[eleccion].getEnPosesion()){
+                    System.out.println("Desconoces la creación de esa alquímia");
+                }else if (aAlquimia[eleccion].getUsado()) {
+                    System.out.println("Ya has usado esta alquímia");
                 } else {
-                    System.out.println("Pocion " + aAlquimia[eleccion - 1].getNombre() + " se está usando");
-                    jugador.getArma().setAtaque(jugador.getArma().getAtaque() + aAlquimia[eleccion - 1].getAddAtaque());
-                    aAlquimia[eleccion - 1].usarPocion();
+                    System.out.println("Alquimia " + aAlquimia[eleccion].getNombre() + " se está usando");
+                    jugador.getArma().setAtaque(jugador.getArma().getAtaque() + aAlquimia[eleccion].getAddAtaque());
+                    aAlquimia[eleccion].usarPocion();
                     System.out.println("El ataque del arma es ahora de: " + jugador.getArma().getAtaque());
                 }
 

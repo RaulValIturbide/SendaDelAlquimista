@@ -1,38 +1,29 @@
-
 package sendadelalquimista;
 
 public class Notas {
-    
+
     /*Problemas a arreglar
-    -Las pociones se pueden usar aunque no estén en posesión del jugador/enemigo
+   
     
-    */
-    
-    
-    
-    
-    /*Problemas arreglados
+     */
+ /*Problemas arreglados
         -No puedo agregar el objeto alquimia en la ronda 
-   */
-    
-    
-    /*To Do List 
+        -Las pociones se pueden usar aunque no estén en posesión del jugador/enemigo
+     */
+ /*To Do List 
     -Crear el comportamiento del enemigo en la ronda
     -Que los da?os tengan un componente aleatorio tanto de enemigos como del jugador
     -Crear resistencias
     -A?adir armas a la ia y pociones para que pueda usarlas
     -Las pociones pueden usarse aunque no se tengan en posesion, debo hacer algo para que salgan diferentes mensajes dependiendo de si
      no la tengo o si ya la he usado 
-    - 
+    - Sistema de velocidad para elegir quien empieza atacando
     
     
     
     
-    */
-    
-    
-    
-    /*
+     */
+ /*
     02/01/2025
     -Arreglar el problema en el que un arma tiene siempre un da?o determinado
     -Crear una clase pociones para mezclar y crear habilidades de alquimia
@@ -50,6 +41,8 @@ public class Notas {
     -He conseguido crear una lista de las pociones, por ahora la idea es que posees un conocimiento del numero de pociones existentes pero no conoces su nombre 
      por lo que hay un hueco con "???????" cuando no tienes la pocion en posesion
     
+    05/01/2025
+    -Ahora el jugador verá la alquimia que puede crear y la que no, si elige una que todavia no ha conocido le aparecerá un texto indicando que no conoce todavia la creación de la misma
     
     
     
@@ -59,6 +52,6 @@ public class Notas {
     
     
     
-    */
     
+     */
 }
