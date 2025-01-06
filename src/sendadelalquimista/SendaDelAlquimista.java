@@ -28,6 +28,7 @@ public class SendaDelAlquimista {
         
         
         //Comienzo del "Juego"
+        Alquimia.libroDeAlquimia(aAlquimia);
         encuentro.ronda(aEnemigo[4], alquimista, aAlquimia);
 
     }
@@ -70,7 +71,7 @@ public class SendaDelAlquimista {
     public static Alquimia[] inicioAlquimia(Alquimia[] aAlquimia) {
         aAlquimia[0] = new Alquimia("Verisaterum", 10,true,false);
         aAlquimia[1] = new Alquimia("Forte", 24,false,false);
-        aAlquimia[2] = new Alquimia("Flamma Maledicta",30,true,false);
+        aAlquimia[2] = new Alquimia("Flamma Maledicta",30,false,false);
         return aAlquimia;
     }
  

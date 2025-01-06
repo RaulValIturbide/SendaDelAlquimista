@@ -13,9 +13,14 @@ public class Menu {
      * @param enemigo el objeto enemigo al que se estÃ¡ enfrentando el jugador
      * @param jugador el propio jugador
      */
-    public static void comienzoDeRonda(Enemigo enemigo, Jugador jugador){
-        System.out.println("Comienza la ronda, " + jugador.getNombre() + " se enfrenta a " + enemigo.getNombre() );
-        System.out.println(jugador.getNombre() + " ataca primero");
+    public static void comienzoDeRonda(Enemigo enemigo, Jugador jugador) {
+        if (jugador.getVelocidad() > enemigo.getVelocidad()) {
+            System.out.println("Comienza la ronda, " + jugador.getNombre() + " se enfrenta a " + enemigo.getNombre());
+            System.out.println(jugador.getNombre() + " es más rapido y ataca primero");
+        } else {
+            System.out.println("Comienza la ronda, " + jugador.getNombre() + " se enfrenta a " + enemigo.getNombre());
+            System.out.println(enemigo.getNombre() + " es más rapido y ataca primero");
+        }
     }
     //Codigo para separar las acciones del jugador/IA y que se entienda todo mejor
     public static void continuarCombate(){
@@ -35,6 +40,7 @@ public class Menu {
      */
     public static void eleccionSkill(){
         System.out.format("""
+                          Tu turno:
                           1-Atacar
                           2-Alquimia
                           """);

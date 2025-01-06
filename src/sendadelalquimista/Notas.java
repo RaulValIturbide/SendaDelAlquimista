@@ -26,9 +26,17 @@ public class Notas {
         no la tengo o si ya la he usado  
     
     */
+    
+    
+    
+    
+    
+    
+    
+    
  /*
     02/01/2025
-    -Arreglar el problema en el que un arma tiene siempre un da?o determinado
+    -Arreglado el problema en el que un arma tiene siempre un daño determinado
     -Crear una clase pociones para mezclar y crear habilidades de alquimia
     -Crear el mapa
     
@@ -41,12 +49,15 @@ public class Notas {
     04/01/2025
     -He creado el atributo "arma" para los enemigos y ahora deben usar el da?o de sus armas para atacar, tambien poseen ahora las pociones de alquimia pero 
     no está implementado su uso todavia
-    -He conseguido crear una lista de las pociones, por ahora la idea es que posees un conocimiento del numero de pociones existentes pero no conoces su nombre 
+    -He conseguido crear una lista de las pociones en combate, por ahora la idea es que posees un conocimiento del numero de pociones existentes pero no conoces su nombre 
      por lo que hay un hueco con "???????" cuando no tienes la pocion en posesion
     
     05/01/2025
-    -Ahora el jugador verá la alquimia que puede crear y la que no, si elige una que todavia no ha conocido le aparecerá un texto indicando que no conoce todavia la creación de la misma
-    
+    -Ahora el jugador verá la alquimia que puede crear y la que no, si elige una que todavia no ha conocido le aparecerá un texto indicando que 
+        no conoce todavia la creación de la misma
+    -He creado un listado de alquimias que el jugador podrá observar como si se tratase de un antiguo libro, con hojas o informacion faltante
+        aquí el jugador podrá ver la info de las alquímias que conozca pero no de las que desconozca estando ocultas por una serie de 
+        interrogantes
     
     
     

@@ -91,10 +91,10 @@ public class Encuentro {
     }
 
     public void ejecucionIa(Jugador jugador, Enemigo enemigo) {
-        System.out.println("El ataque de " + enemigo.getNombre() + " es de:" + enemigo.getArma().getAtaque());
-        System.out.println("La vida de " + jugador.getNombre() + " es de " + jugador.getVida());
+        System.out.println(enemigo.getNombre() + " golpea haciendo " + enemigo.getArma().getAtaque() + " puntos de da?o");
+        //System.out.println("La vida de " + jugador.getNombre() + " es de " + jugador.getVida());
         ataque(enemigo, jugador, 2);
-        System.out.println("El ataque de " + enemigo.getNombre() + " deja a " + jugador.getNombre() + " a " + jugador.getVida());
+        System.out.println("El ataque de " + enemigo.getNombre() + " deja a " + jugador.getNombre() + " a " + jugador.getVida() + " de vida");
 
     }
 
@@ -107,6 +107,8 @@ public class Encuentro {
      */
     public void ronda(Enemigo enemigo, Jugador jugador, Alquimia[] alquimia) {
         Menu.comienzoDeRonda(enemigo, jugador);
+        Menu.lineaEnBlanco();
+        Menu.continuarCombate();
         do {
             if (jugador.getVelocidad() > enemigo.getVelocidad()) {
                 do {
@@ -120,17 +122,21 @@ public class Encuentro {
                 if (enemigo.getVivo()) {
                     ejecucionIa(jugador, enemigo);
                     enemigo.regenerarAccionEnemigo();
+
                 }
             } else {
-                
+
                 ejecucionIa(jugador, enemigo);
                 enemigo.regenerarAccionEnemigo();
                 Menu.lineaEnBlanco();
                 Menu.continuarCombate();
-                Menu.eleccionSkill();
-
-                ejecucionJugador(Menu.eleccionJugador(1, 2), jugador, enemigo, alquimia, jugador.getAccion());
-
+                do {
+                    Menu.eleccionSkill();
+                    ejecucionJugador(Menu.eleccionJugador(1, 2), jugador, enemigo, alquimia, jugador.getAccion());
+                } while (jugador.getAccion() == true);
+                jugador.regenerarAccionJugador();
+                Menu.lineaEnBlanco();
+                Menu.continuarCombate();
             }
         } while (enemigo.getVivo() && jugador.getVivo());
 

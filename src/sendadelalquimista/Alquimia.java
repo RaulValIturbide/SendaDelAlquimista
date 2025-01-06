@@ -60,6 +60,43 @@ public class Alquimia {
         }
         return contador;
     }
+    /**
+     * Un metodo para dar la información de cada una de las pociones si es que se conocen y si no
+     * aparecerás ocultas tras interrogantes
+     * @param alquimia la alquimia especifica, es decir, un objeto alquimia concreto
+     * @param contador sistema para crear una numeración de las alquimias existentes
+     */
+    public static void infoAlquimia(Alquimia alquimia, int contador) {
+
+        if (alquimia.enPosesion) {
+            System.out.format("""
+                                  %d
+                                  Nombre:%s
+                                  Habilidad:Aumenta el daño del arma en %d puntos más
+                                  """, contador, alquimia.getNombre(), alquimia.getAddAtaque());
+            System.out.println("");
+        } else {
+            System.out.format("""
+                                  %d 
+                                  Nombre:??? ?????
+                                  Habilidad:??? ???? ???
+                                  """, contador);
+            System.out.println("");
+        }
+
+    }
+    /**
+     * Un libro para implementar cuando el jugador se encuentre fuera del combate que le permita ver las alquimias
+     * que conoce y las que no
+     * @param alquimia el array con las alquimias creadas
+     */
+    public static void libroDeAlquimia(Alquimia[] alquimia) {
+        for (int i = 0; i < alquimia.length; i++) {
+            infoAlquimia(alquimia[i],i+1);
+
+        }
+
+    }
 
 
 
